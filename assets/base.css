@@ -5328,3 +5328,8 @@ predictive-search-component *::placeholder {
   background-color: transparent !important;
   border-color: rgba(255, 255, 255, 0.9) !important;
 }
+
+/* Add white border to add-to-cart button */
+.add-to-cart-button {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
