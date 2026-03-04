@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
           duration: 0.7,
           ease: 'power3.out',
           stagger: {
-            amount: 0.5,   // total stagger spread across all cards
+            amount: 0.6,   // total stagger spread across all cards
             from: 'start',
           },
         });
