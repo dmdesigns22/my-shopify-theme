@@ -4125,7 +4125,7 @@ slideshow-container {
   position: relative;
   grid-area: container;
   container-type: inline-size;
-  background-color: var(--color-background);
+  background-color: transparent;
 }
 
 @media screen and (min-width: 750px) {
