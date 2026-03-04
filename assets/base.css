@@ -5280,6 +5280,7 @@ predictive-search-component *::placeholder {
   -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
   backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
   border-radius: 22px !important;
+  overflow: hidden;
 
   /* Fallback box-shadow */
   box-shadow:
@@ -5326,9 +5327,4 @@ predictive-search-component *::placeholder {
 .quantity-selector:hover {
   background-color: transparent !important;
   border-color: rgba(255, 255, 255, 0.9) !important;
-}
-
-/* Add white border to add-to-cart button */
-.add-to-cart-button {
-  border-color: rgba(255, 255, 255, 0.5) !important;
 }
