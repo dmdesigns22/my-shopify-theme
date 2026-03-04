@@ -5275,8 +5275,8 @@ predictive-search-component *::placeholder {
   padding: 20px !important;
 }
 
-/* Product details sticky panel: float above the nav */
+/* Product details sticky panel: stop just below the nav */
 .product-details.sticky-content--desktop {
-  --sticky-header-offset: 0 !important;
-  z-index: 9 !important;
+  --sticky-header-offset: var(--header-height) !important;
+  z-index: 1 !important;
 }
