@@ -5318,11 +5318,13 @@ predictive-search-component *::placeholder {
   z-index: 1 !important;
 }
 
-/* Remove white background from quantity selector */
+/* Remove white background and force white border on quantity selector */
 .quantity-selector {
   background-color: transparent !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
 }
 
 .quantity-selector:hover {
   background-color: transparent !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
 }
