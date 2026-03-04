@@ -4944,3 +4944,20 @@ product-recommendations:has([data-has-recommendations='false']) {
     translate: 0px var(--atc-destination, 0px);
   }
 }
+
+/* ============================================
+   RRUGA STUDIOS — Hide title & price on cards,
+   reveal on hover (desktop only)
+   ============================================ */
+@media (hover: hover) {
+  .product-grid product-card .product-card__content a.contents,
+  .product-grid product-card .product-card__content product-price {
+    opacity: 0 !important;
+    transition: opacity 0.3s ease;
+  }
+
+  .product-grid product-card:hover .product-card__content a.contents,
+  .product-grid product-card:hover .product-card__content product-price {
+    opacity: 1 !important;
+  }
+}
