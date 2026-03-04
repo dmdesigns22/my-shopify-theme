@@ -4963,3 +4963,81 @@ product-recommendations:has([data-has-recommendations='false']) {
     opacity: 1 !important;
   }
 }
+
+/* ============================================
+   RRUGA STUDIOS — Glassmorphism: Predictive Search
+   ============================================ */
+
+/* Modal container */
+.dialog-modal.search-modal__content {
+  --c-light: #fff;
+  --c-dark: #000;
+  --glass-reflex-dark: 1;
+  --glass-reflex-light: 1;
+  --glass-blur: 8px;
+  --glass-saturation: 150%;
+
+  background: #fbfbfb33 !important;
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: none !important;
+
+  box-shadow:
+    inset 0 0 0 1px var(--c-light),
+    inset 1.8px 3px 0 -2px var(--c-light),
+    inset -2px -2px 0 -2px var(--c-light),
+    inset -3px -8px 1px -6px var(--c-light),
+    inset -.3px -1px 4px 0 var(--c-dark),
+    inset -1.5px 2.5px 0 -2px var(--c-dark),
+    inset 0 3px 4px -2px var(--c-dark),
+    inset 2px -6.5px 1px -4px var(--c-dark),
+    0 1px 5px 0 var(--c-dark),
+    0 6px 16px 0 var(--c-dark) !important;
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+  .dialog-modal.search-modal__content {
+    box-shadow:
+      inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+      inset 1.8px 3px 0 -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+      inset -2px -2px 0 -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+      inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+      inset -.3px -1px 4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+      inset -1.5px 2.5px 0 -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+      inset 0 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+      inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+      0 1px 5px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+      0 6px 16px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent) !important;
+  }
+}
+
+/* Make inner components transparent so glass shows through */
+predictive-search-component,
+.dialog-modal .predictive-search-form__header,
+.predictive-search-form__content-wrapper,
+.predictive-search-form__content {
+  background-color: transparent !important;
+}
+
+/* Search input */
+.search-modal .search-input,
+.search-modal input[type='search'] {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.search-modal input[type='search']::placeholder {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+/* Icons and close button */
+.search-modal svg,
+.search-modal .predictive-search__close-modal-button svg {
+  stroke: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Divider between input and results */
+.dialog-modal .predictive-search-form__header {
+  border-bottom-color: rgba(255, 255, 255, 0.2) !important;
+}
