@@ -5234,19 +5234,19 @@ predictive-search-component *::placeholder {
   --color-variant-hover-background: rgba(255, 255, 255, 0.15);
   --color-variant-hover-border: rgba(255, 255, 255, 0.8);
   --color-variant-hover-text: rgba(255, 255, 255, 1);
-  --color-selected-variant-background: rgba(255, 255, 255, 0.9);
+  --color-selected-variant-background: transparent;
   --color-selected-variant-border: rgba(255, 255, 255, 0.9);
-  --color-selected-variant-text: #000;
+  --color-selected-variant-text: rgba(255, 255, 255, 1);
   --color-selected-variant-hover-border: rgba(255, 255, 255, 1);
-  --color-selected-variant-hover-text: #000;
-  --color-selected-variant-hover-background: rgba(255, 255, 255, 1);
+  --color-selected-variant-hover-text: rgba(255, 255, 255, 1);
+  --color-selected-variant-hover-background: transparent;
   --options-border-radius: 999px;
 }
 
-/* Selected variant button text should be dark (overrides white * rule above) */
+/* Selected variant button text stays white (transparent background) */
 .product-details .variant-option__button-label:has(:checked),
 .product-details .variant-option__button-label:has(:checked) .variant-option__button-label__text {
-  color: #000 !important;
+  color: rgba(255, 255, 255, 1) !important;
 }
 
 /* Dividers and borders inside product-details */
