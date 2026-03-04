@@ -5317,3 +5317,12 @@ predictive-search-component *::placeholder {
   --sticky-header-offset: calc(var(--header-height) + 10px) !important;
   z-index: 1 !important;
 }
+
+/* Remove white background from quantity selector */
+.quantity-selector {
+  background-color: transparent !important;
+}
+
+.quantity-selector:hover {
+  background-color: transparent !important;
+}
