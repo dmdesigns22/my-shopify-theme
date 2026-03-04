@@ -5189,6 +5189,15 @@ predictive-search-component *::placeholder {
 }
 
 /* =====================================================
+   RRUGA STUDIOS — Global White Text
+   ===================================================== */
+
+body,
+body * {
+  color: #fff !important;
+}
+
+/* =====================================================
    RRUGA STUDIOS — Animated Noise Background
    ===================================================== */
 
