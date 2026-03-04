@@ -5261,9 +5261,9 @@ predictive-search-component *::placeholder {
 /* Buy button stays solid */
 .product-details .button--primary,
 .product-details [name='add'] {
-  background-color: #fff !important;
-  color: #000 !important;
-  border-color: #fff !important;
+  background-color: transparent !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
 }
 
 /* Product information section — nav-style glassmorphism */
