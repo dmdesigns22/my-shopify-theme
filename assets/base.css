@@ -5187,3 +5187,85 @@ predictive-search-component *::placeholder {
 .quick-add__button {
   display: none !important;
 }
+
+/* =====================================================
+   RRUGA STUDIOS — Product Page Glass Card
+   ===================================================== */
+
+/* Glass panel on product details panel */
+.product-details {
+  background: rgba(0, 0, 0, 0.45) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 16px !important;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+  overflow: hidden;
+}
+
+/* Inner blocks transparent so glass shows through */
+.product-details .group-block,
+.product-details .spacing-style,
+.product-details [class*='color-'] {
+  background-color: transparent !important;
+}
+
+/* All text white */
+.product-details,
+.product-details * {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* SVG icons white */
+.product-details svg {
+  stroke: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Variant picker — CSS variable overrides for glass look */
+.product-details .variant-picker,
+.product-details variant-picker {
+  --color-variant-background: transparent;
+  --color-variant-border: rgba(255, 255, 255, 0.5);
+  --color-variant-text: rgba(255, 255, 255, 0.9);
+  --color-variant-text-rgb: 255, 255, 255;
+  --color-variant-hover-background: rgba(255, 255, 255, 0.15);
+  --color-variant-hover-border: rgba(255, 255, 255, 0.8);
+  --color-variant-hover-text: rgba(255, 255, 255, 1);
+  --color-selected-variant-background: rgba(255, 255, 255, 0.9);
+  --color-selected-variant-border: rgba(255, 255, 255, 0.9);
+  --color-selected-variant-text: #000;
+  --color-selected-variant-hover-border: rgba(255, 255, 255, 1);
+  --color-selected-variant-hover-text: #000;
+  --color-selected-variant-hover-background: rgba(255, 255, 255, 1);
+  --options-border-radius: 999px;
+}
+
+/* Selected variant button text should be dark (overrides white * rule above) */
+.product-details .variant-option__button-label:has(:checked),
+.product-details .variant-option__button-label:has(:checked) .variant-option__button-label__text {
+  color: #000 !important;
+}
+
+/* Dividers and borders inside product-details */
+.product-details hr,
+.product-details [class*='divider'] {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Input fields inside product-details (e.g. quantity) */
+.product-details input:not([type='radio']):not([type='checkbox']) {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Buy button stays solid */
+.product-details .button--primary,
+.product-details [name='add'] {
+  background-color: #fff !important;
+  color: #000 !important;
+  border-color: #fff !important;
+}
