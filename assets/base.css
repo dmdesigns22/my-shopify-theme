@@ -5192,17 +5192,13 @@ predictive-search-component *::placeholder {
    RRUGA STUDIOS — Product Page Glass Card
    ===================================================== */
 
-/* Glass panel on product details panel */
+/* Glass panel on product details panel — transparent so parent glass shows */
 .product-details {
-  background: rgba(0, 0, 0, 0.45) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  border-radius: 16px !important;
-  box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
-  overflow: hidden;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible;
 }
 
 /* Inner blocks transparent so glass shows through */
@@ -5270,9 +5266,50 @@ predictive-search-component *::placeholder {
   border-color: #fff !important;
 }
 
-/* Product information section padding */
+/* Product information section — nav-style glassmorphism */
 #ProductInformation-template--19930259095630__main {
+  --c-light: #fff;
+  --c-dark: #000;
+  --glass-reflex-dark: 1;
+  --glass-reflex-light: 1;
+  --glass-blur: 8px;
+  --glass-saturation: 150%;
+
   padding: 20px !important;
+  background: #fbfbfb33 !important;
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border-radius: 22px !important;
+  overflow: hidden;
+
+  /* Fallback box-shadow */
+  box-shadow:
+    inset 0 0 0 1px var(--c-light),
+    inset 1.8px 3px 0 -2px var(--c-light),
+    inset -2px -2px 0 -2px var(--c-light),
+    inset -3px -8px 1px -6px var(--c-light),
+    inset -.3px -1px 4px 0 var(--c-dark),
+    inset -1.5px 2.5px 0 -2px var(--c-dark),
+    inset 0 3px 4px -2px var(--c-dark),
+    inset 2px -6.5px 1px -4px var(--c-dark),
+    0 1px 5px 0 var(--c-dark),
+    0 6px 16px 0 var(--c-dark) !important;
+}
+
+@supports (color: color-mix(in lab, red, red)) {
+  #ProductInformation-template--19930259095630__main {
+    box-shadow:
+      inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+      inset 1.8px 3px 0 -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+      inset -2px -2px 0 -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+      inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+      inset -.3px -1px 4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+      inset -1.5px 2.5px 0 -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+      inset 0 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+      inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+      0 1px 5px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+      0 6px 16px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent) !important;
+  }
 }
 
 /* Product details sticky panel: stop just below the nav */
