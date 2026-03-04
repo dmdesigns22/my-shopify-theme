@@ -1189,11 +1189,15 @@
     }
   }
 
-  /* Nav pill full width on mobile; sit above the menu drawer */
+  /* Nav pill full width on mobile */
   @media screen and (max-width: 749px) {
     .header__row--top .header__columns {
       width: 100%;
       margin: 0;
+    }
+
+    /* Summary toggle (X button) must sit above the fixed menu-drawer */
+    .menu-drawer-container .header__icon--summary {
       position: relative;
       z-index: calc(var(--layer-menu-drawer) + 2);
     }
