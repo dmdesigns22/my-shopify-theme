@@ -5212,8 +5212,8 @@ predictive-search-component *::placeholder {
     max-height: 85dvh !important;
     overflow-y: auto !important;
     border-right: none !important;
-    /* Sit behind the nav so it appears to slide out from under it */
-    z-index: calc(var(--layer-header-menu) - 1) !important;
+    /* Keep above page content, below the nav pill (see .header__columns override below) */
+    z-index: var(--layer-menu-drawer) !important;
     /* Push content below the nav bar */
     padding-top: var(--header-height) !important;
 
