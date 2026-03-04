@@ -5192,11 +5192,7 @@ predictive-search-component *::placeholder {
    RRUGA STUDIOS — Product Page Glass Card
    ===================================================== */
 
-/* =====================================================
-   RRUGA STUDIOS — Product Page Glass Card
-   ===================================================== */
-
-/* Nav-style glassmorphism on product details panel */
+/* Identical glass to nav pill */
 #ProductInformation-template--19930259095630__main {
   --c-light: #fff;
   --c-dark: #000;
@@ -5240,7 +5236,7 @@ predictive-search-component *::placeholder {
   }
 }
 
-/* Inner blocks transparent so glass shows through */
+/* Inner backgrounds transparent */
 #ProductInformation-template--19930259095630__main .group-block,
 #ProductInformation-template--19930259095630__main .spacing-style,
 #ProductInformation-template--19930259095630__main [class*='color-'] {
@@ -5257,18 +5253,18 @@ predictive-search-component *::placeholder {
 #ProductInformation-template--19930259095630__main svg {
   stroke: rgba(255, 255, 255, 0.9);
   color: rgba(255, 255, 255, 0.9);
-  fill: none;
 }
 
-/* All borders white */
-#ProductInformation-template--19930259095630__main *,
-#ProductInformation-template--19930259095630__main *::before,
-#ProductInformation-template--19930259095630__main *::after {
-  border-color: rgba(255, 255, 255, 0.35) !important;
-  outline-color: rgba(255, 255, 255, 0.5) !important;
+/* White borders on inputs, selects, dividers */
+#ProductInformation-template--19930259095630__main input,
+#ProductInformation-template--19930259095630__main select,
+#ProductInformation-template--19930259095630__main textarea,
+#ProductInformation-template--19930259095630__main hr,
+#ProductInformation-template--19930259095630__main [class*='divider'] {
+  border-color: rgba(255, 255, 255, 0.4) !important;
 }
 
-/* Variant picker — glass CSS variable overrides */
+/* Variant picker — white glass variables */
 #ProductInformation-template--19930259095630__main .variant-picker,
 #ProductInformation-template--19930259095630__main variant-picker {
   --color-variant-background: transparent;
@@ -5287,18 +5283,17 @@ predictive-search-component *::placeholder {
   --options-border-radius: 999px;
 }
 
-/* Quantity selector transparent, white border */
+/* Quantity selector */
 #ProductInformation-template--19930259095630__main .quantity-selector {
   background-color: transparent !important;
   border-color: rgba(255, 255, 255, 0.5) !important;
 }
 
 #ProductInformation-template--19930259095630__main .quantity-selector:hover {
-  background-color: transparent !important;
   border-color: rgba(255, 255, 255, 0.9) !important;
 }
 
-/* Buy button — transparent with white border */
+/* Buy / add-to-cart button */
 #ProductInformation-template--19930259095630__main .button--primary,
 #ProductInformation-template--19930259095630__main [name='add'],
 #ProductInformation-template--19930259095630__main .add-to-cart-button {
