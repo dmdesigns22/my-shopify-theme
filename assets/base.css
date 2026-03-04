@@ -5189,6 +5189,21 @@ predictive-search-component *::placeholder {
 }
 
 /* =====================================================
+   RRUGA STUDIOS — Animated Noise Background
+   ===================================================== */
+
+#rruga-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  /* Scale up from half-res render — keeps it smooth */
+  image-rendering: auto;
+  pointer-events: none;
+}
+
+/* =====================================================
    RRUGA STUDIOS — Mobile Menu Drawer (Glassmorphism Dropdown)
    ===================================================== */
 
