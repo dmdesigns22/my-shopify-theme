@@ -5206,8 +5206,12 @@ predictive-search-component *::placeholder {
    RRUGA STUDIOS — Global White Text
    ===================================================== */
 
-body {
+html {
   background-color: #000 !important;
+}
+
+body {
+  background-color: transparent !important;
 }
 
 body,
