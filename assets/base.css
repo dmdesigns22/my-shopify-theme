@@ -5292,4 +5292,9 @@ predictive-search-component *::placeholder {
   .menu-drawer__close-button {
     display: none !important;
   }
+
+  /* Hide featured content area */
+  .menu-drawer__featured-content {
+    display: none !important;
+  }
 }
