@@ -1155,6 +1155,7 @@
     -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
     backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
     border-radius: 22px;
+    transition: border-radius 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     padding: 6px;
     min-height: 52px;
 
@@ -1196,7 +1197,12 @@
       margin: 0;
     }
 
-    /* Summary toggle (X button) must sit above the fixed menu-drawer */
+    /* When drawer is open: flatten bottom corners so pill + drawer merge into one shape */
+    .header__row--top .header__columns:has(.menu-open) {
+      border-radius: 22px 22px 0 0;
+    }
+
+    /* Summary toggle must sit above drawer */
     .menu-drawer-container .header__icon--summary {
       position: relative;
       z-index: calc(var(--layer-menu-drawer) + 2);
