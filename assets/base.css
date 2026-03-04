@@ -5159,3 +5159,26 @@ predictive-search-component *::placeholder {
   stroke: rgba(255, 255, 255, 0.9);
   color: rgba(255, 255, 255, 0.9);
 }
+
+/* Glassmorphism radio inputs inside quick-add modal */
+.quick-add-modal input[type='radio'] {
+  background: #fbfbfb33 !important;
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  backdrop-filter: blur(8px) saturate(150%);
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.quick-add-modal input[type='radio']:checked {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.quick-add-modal input[type='radio']:checked::after {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.quick-add-modal input[type='radio']:not(:disabled):hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+}
