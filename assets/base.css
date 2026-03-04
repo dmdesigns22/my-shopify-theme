@@ -5084,3 +5084,13 @@ predictive-search-component,
       0 6px 16px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
   }
 }
+
+/* All text inside predictive search: white */
+predictive-search-component,
+predictive-search-component * {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+predictive-search-component *::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
