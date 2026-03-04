@@ -5189,6 +5189,20 @@ predictive-search-component *::placeholder {
 }
 
 /* =====================================================
+   RRUGA STUDIOS — Product Page Media Transparent Background
+   ===================================================== */
+
+.product-media-container,
+.product-media-container.constrain-height,
+.product-media-gallery,
+.product-media-gallery__main,
+.product-media-gallery__thumbnail,
+.media-fit-contain :is(img, .deferred-media__poster-image),
+.dialog-zoomed-gallery__dialog {
+  background-color: transparent !important;
+}
+
+/* =====================================================
    RRUGA STUDIOS — Global White Text
    ===================================================== */
 
