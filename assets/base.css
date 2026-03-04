@@ -5192,7 +5192,7 @@ predictive-search-component *::placeholder {
    RRUGA STUDIOS — Mobile Menu Drawer (Glassmorphism Dropdown)
    ===================================================== */
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 1024px) {
   /* Reposition: drop down from top instead of slide from left */
   .menu-drawer {
     --c-light: #fff;
