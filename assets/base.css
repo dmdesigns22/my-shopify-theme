@@ -5231,14 +5231,8 @@ predictive-search-component *::placeholder {
       0 1px 5px 0 var(--c-dark),
       0 6px 16px 0 var(--c-dark) !important;
 
-    /* Closed: clipped, non-interactive */
-    transform: none !important;
-    clip-path: inset(0 0 100% 0 round 22px) !important;
-    visibility: hidden;
-    pointer-events: none !important;
-    transition:
-      clip-path 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-      visibility 0.35s ease !important;
+    /* Closed: slide up under the nav (theme JS controls visibility) */
+    transform: translateY(-100%) !important;
   }
 
   @supports (color: color-mix(in lab, red, red)) {
@@ -5257,12 +5251,9 @@ predictive-search-component *::placeholder {
     }
   }
 
-  /* Open state: reveal downward, fully interactive */
+  /* Open: slide down into view */
   .menu-open > .menu-drawer {
-    clip-path: inset(0 0 0% 0 round 22px) !important;
-    visibility: visible !important;
-    transform: none !important;
-    pointer-events: auto !important;
+    transform: translateY(0) !important;
   }
 
   /* All text white */
