@@ -5295,4 +5295,9 @@ predictive-search-component *::placeholder {
   .menu-drawer .menu-drawer__menu-item {
     border-bottom-color: rgba(255, 255, 255, 0.15) !important;
   }
+
+  /* Hide the close button inside the drawer — nav X handles it */
+  .menu-drawer__close-button {
+    display: none !important;
+  }
 }
