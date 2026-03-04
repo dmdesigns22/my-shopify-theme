@@ -5182,3 +5182,8 @@ predictive-search-component *::placeholder {
   background: rgba(255, 255, 255, 0.2) !important;
   border-color: rgba(255, 255, 255, 0.8) !important;
 }
+
+/* Hide quick-add button on product cards */
+.quick-add__button {
+  display: none !important;
+}
