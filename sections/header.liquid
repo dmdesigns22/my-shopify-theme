@@ -1106,6 +1106,154 @@
     font-family: var(--menu-localization-font);
     font-size: var(--menu-localization-font-size);
   }
+
+  /* ============================================================
+     RRUGA STUDIOS — Glassmorphism Pill Navigation
+     ============================================================ */
+
+  /* Float the header section fixed at top with breathing room from edges */
+  .header-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 20px;
+    z-index: var(--layer-sticky);
+    pointer-events: none;
+    background: transparent;
+  }
+
+  /* Re-enable pointer events on the header component itself */
+  #header-component {
+    pointer-events: auto;
+    background: transparent;
+  }
+
+  /* Hide underlays — glass effect handles background */
+  .header__underlay {
+    display: none;
+  }
+
+  /* Rows: transparent, no border */
+  .header__row {
+    background-color: transparent;
+    border-bottom: none !important;
+  }
+
+  /* Glassmorphism pill — applied to the top row columns container */
+  .header__row--top .header__columns {
+    --c-light: #fff;
+    --c-dark: #000;
+    --glass-reflex-dark: 1;
+    --glass-reflex-light: 1;
+    --glass-blur: 8px;
+    --glass-saturation: 150%;
+
+    background: #fbfbfb33;
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+    border-radius: 22px;
+    padding: 6px;
+    min-height: 52px;
+
+    /* Fallback box-shadow for browsers without color-mix() */
+    box-shadow:
+      inset 0 0 0 1px var(--c-light),
+      inset 1.8px 3px 0 -2px var(--c-light),
+      inset -2px -2px 0 -2px var(--c-light),
+      inset -3px -8px 1px -6px var(--c-light),
+      inset -.3px -1px 4px 0 var(--c-dark),
+      inset -1.5px 2.5px 0 -2px var(--c-dark),
+      inset 0 3px 4px -2px var(--c-dark),
+      inset 2px -6.5px 1px -4px var(--c-dark),
+      0 1px 5px 0 var(--c-dark),
+      0 6px 16px 0 var(--c-dark);
+  }
+
+  /* Enhanced glass refraction using color-mix() for modern browsers */
+  @supports (color: color-mix(in lab, red, red)) {
+    .header__row--top .header__columns {
+      box-shadow:
+        inset 0 0 0 1px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 10%), transparent),
+        inset 1.8px 3px 0 -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 90%), transparent),
+        inset -2px -2px 0 -2px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 80%), transparent),
+        inset -3px -8px 1px -6px color-mix(in srgb, var(--c-light) calc(var(--glass-reflex-light) * 60%), transparent),
+        inset -.3px -1px 4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+        inset -1.5px 2.5px 0 -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 0 3px 4px -2px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+        inset 2px -6.5px 1px -4px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0 1px 5px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+        0 6px 16px color-mix(in srgb, var(--c-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+    }
+  }
+
+  /* Logo image: invert to white */
+  .header .header-logo__link img,
+  .header .header-logo img {
+    filter: brightness(0) invert(1);
+  }
+
+  /* Nav links: white, uppercase, bold Helvetica */
+  .header .menu-list__link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+
+  .header .menu-list__link:hover {
+    color: #ffffff !important;
+    opacity: 1;
+  }
+
+  /* Header action icons: white */
+  .header .header-actions__action {
+    color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  .header .header-actions__action svg {
+    color: rgba(255, 255, 255, 0.9);
+    stroke: rgba(255, 255, 255, 0.9);
+  }
+
+  /* Hamburger/drawer menu icon: white */
+  .header .header__icon--menu svg {
+    stroke: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* Cart count bubble: white background, dark text */
+  .header .cart-count-bubble {
+    background: rgba(255, 255, 255, 1) !important;
+    color: #000 !important;
+    font-weight: 700;
+    font-family: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  /* Floating nav overlays content — no body padding needed */
+  body {
+    padding-top: 0;
+  }
+
+  /* Mobile adjustments */
+  @media screen and (max-width: 749px) {
+    .header-section {
+      padding: 12px 14px;
+    }
+
+    .header__row--top .header__columns {
+      border-radius: 48px;
+      min-height: 52px;
+    }
+
+    body {
+      padding-top: 0;
+    }
+  }
+
+  /* End Glassmorphism Pill Nav ================================ */
 {% endstylesheet %}
 
 {% unless request.design_mode %}
