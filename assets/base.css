@@ -5269,3 +5269,8 @@ predictive-search-component *::placeholder {
   color: #000 !important;
   border-color: #fff !important;
 }
+
+/* Product information section padding */
+#ProductInformation-template--19930259095630__main {
+  padding: 20px !important;
+}
