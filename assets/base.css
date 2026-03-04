@@ -5234,7 +5234,7 @@ predictive-search-component *::placeholder {
   --color-variant-hover-background: rgba(255, 255, 255, 0.15);
   --color-variant-hover-border: rgba(255, 255, 255, 0.8);
   --color-variant-hover-text: rgba(255, 255, 255, 1);
-  --color-selected-variant-background: transparent;
+  --color-selected-variant-background: rgba(255, 255, 255, 0.1);
   --color-selected-variant-border: rgba(255, 255, 255, 0.9);
   --color-selected-variant-text: rgba(255, 255, 255, 1);
   --color-selected-variant-hover-border: rgba(255, 255, 255, 1);
