@@ -5192,6 +5192,11 @@ predictive-search-component *::placeholder {
    RRUGA STUDIOS — Global White Text
    ===================================================== */
 
+/* Hero section hidden temporarily */
+#shopify-section-hero_jVaWmY {
+  display: none !important;
+}
+
 body,
 body * {
   color: #fff !important;
