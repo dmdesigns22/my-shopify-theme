@@ -862,6 +862,22 @@
     }
   }
 
+  /* RRUGA: reposition drawer to match 40% pill nav */
+  @media screen and (min-width: 750px) {
+    .menu-drawer {
+      left: 50% !important;
+      right: auto !important;
+      width: calc(40vw - 20px) !important;
+      max-width: none !important;
+      top: calc(var(--header-height) + 4px) !important;
+      transform: translateX(-50%) translateY(-100%) !important;
+      border-radius: 0 0 22px 22px !important;
+    }
+    .menu-open > .menu-drawer {
+      transform: translateX(-50%) translateY(0) !important;
+    }
+  }
+
   /* When opening a submenu we don't want the first-level menu to be scrollable, so we reset the overflow  */
   .menu-drawer.menu-drawer--has-submenu-opened {
     overflow: initial;
