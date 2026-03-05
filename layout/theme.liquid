@@ -137,6 +137,26 @@
 
     <script src="{{ 'bg-noise.js' | asset_url }}" defer></script>
 
+    <!-- RRUGA: Force drawer menu at all breakpoints -->
+    <script>
+      (function () {
+        function forceDrawer() {
+          var el = document.getElementById('header-component');
+          if (el && el.dataset.menuStyle !== 'drawer') {
+            el.dataset.menuStyle = 'drawer';
+          }
+        }
+        var observer = new MutationObserver(forceDrawer);
+        document.addEventListener('DOMContentLoaded', function () {
+          var el = document.getElementById('header-component');
+          if (el) {
+            forceDrawer();
+            observer.observe(el, { attributes: true, attributeFilter: ['data-menu-style'] });
+          }
+        });
+      })();
+    </script>
+
     <!-- GSAP + ScrollTrigger -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
