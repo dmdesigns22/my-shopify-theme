@@ -6,7 +6,23 @@
   lang="{{ request.locale.iso_code }}"
 >
   <head>
-    <style>html{background:#000!important}body{background:transparent!important;color:#fff!important}</style>
+    <style>
+      :root { --color-background: transparent !important; }
+      html { background: #000 !important; }
+      body { background: transparent !important; color: #fff !important; }
+      .section-background,
+      [class*="color-scheme"],
+      [class*="color-"] { background: transparent !important; }
+    </style>
+    <style>
+      @font-face {
+        font-family: 'GTStandard';
+        src: url('{{ 'GTStandard-MRegular.woff2' | asset_url }}') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
     {%- if settings.favicon != blank -%}
       <link
         rel="icon"
@@ -125,9 +141,6 @@
       {{ content_for_layout }}
     </main>
 
-    <footer>
-      {% sections 'footer-group' %}
-    </footer>
 
     {% render 'search-modal' %}
 

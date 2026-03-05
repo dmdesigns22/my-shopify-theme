@@ -5203,6 +5203,16 @@ predictive-search-component *::placeholder {
 }
 
 /* =====================================================
+   RRUGA STUDIOS — Global Font
+   ===================================================== */
+
+html,
+body,
+body * {
+  font-family: 'GTStandard', sans-serif !important;
+}
+
+/* =====================================================
    RRUGA STUDIOS — Global White Text
    ===================================================== */
 
@@ -5264,11 +5274,11 @@ body::before {
     --glass-saturation: 150%;
 
     position: fixed !important;
-    top: var(--header-height) !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
+    top: calc(var(--header-height) + 4px) !important;
+    left: 50% !important;
+    right: auto !important;
+    width: calc(40vw - 20px) !important;
+    max-width: none !important;
     height: auto !important;
     max-height: 85dvh !important;
     overflow-y: auto !important;
@@ -5292,8 +5302,9 @@ body::before {
       0 1px 5px 0 var(--c-dark),
       0 6px 16px 0 var(--c-dark) !important;
 
-    /* Closed: slide up under the nav (theme JS controls visibility) */
-    transform: translateY(-100%) !important;
+    /* Closed: slide up behind nav, centered */
+    transform: translateX(-50%) translateY(-100%) !important;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
   }
 
   @supports (color: color-mix(in lab, red, red)) {
@@ -5314,7 +5325,19 @@ body::before {
 
   /* Open: slide down into view */
   .menu-open > .menu-drawer {
-    transform: translateY(0) !important;
+    transform: translateX(-50%) translateY(0) !important;
+  }
+
+  /* Mobile: full width, no X offset */
+  @media screen and (max-width: 749px) {
+    .menu-drawer {
+      left: 0 !important;
+      width: 100% !important;
+      transform: translateY(-100%) !important;
+    }
+    .menu-open > .menu-drawer {
+      transform: translateY(0) !important;
+    }
   }
 
   /* All text white */
