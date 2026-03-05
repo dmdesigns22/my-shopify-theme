@@ -292,7 +292,6 @@
 <header-component
   id="header-component"
   class="{{ class }}"
-  data-menu-style="drawer"
   data-theme-color="rgb({{ section.settings.color_scheme_top.settings.background.rgb }})"
   {% if transparent %}
     transparent="{{ transparent }}"
@@ -1106,30 +1105,6 @@
   .dropdown-localization:not(dropdown-localization-component) .language-selector {
     font-family: var(--menu-localization-font);
     font-size: var(--menu-localization-font-size);
-  }
-
-  /* ============================================================
-     RRUGA STUDIOS — Always drawer mode (hides inline menu from first paint)
-     ============================================================ */
-
-  /* Hide only the inline horizontal nav links */
-  #header-component .header-menu {
-    display: none !important;
-  }
-
-  /* Always show hamburger */
-  #header-component .header__drawer {
-    display: flex !important;
-  }
-
-  /* Keep search visible and on the LEFT in drawer mode */
-  @media screen and (min-width: 750px) {
-    #header-component .search-action--hidden-on-drawer {
-      display: flex !important;
-    }
-    #header-component .header__columns .search-action {
-      grid-area: leftB !important;
-    }
   }
 
   /* ============================================================

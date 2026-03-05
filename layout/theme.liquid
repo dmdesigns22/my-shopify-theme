@@ -150,19 +150,22 @@
 
     <script src="{{ 'bg-noise.js' | asset_url }}" defer></script>
 
-    <!-- RRUGA: Force drawer menu at all breakpoints — runs synchronously in <head> -->
+    <!-- RRUGA: Force drawer menu at all breakpoints -->
     <script>
       (function () {
-        new MutationObserver(function (mutations) {
-          mutations.forEach(function (m) {
-            if (m.target.id === 'header-component' && m.target.dataset.menuStyle !== 'drawer') {
-              m.target.dataset.menuStyle = 'drawer';
-            }
-          });
-        }).observe(document.documentElement, {
-          attributes: true,
-          attributeFilter: ['data-menu-style'],
-          subtree: true
+        function forceDrawer() {
+          var el = document.getElementById('header-component');
+          if (el && el.dataset.menuStyle !== 'drawer') {
+            el.dataset.menuStyle = 'drawer';
+          }
+        }
+        var observer = new MutationObserver(forceDrawer);
+        document.addEventListener('DOMContentLoaded', function () {
+          var el = document.getElementById('header-component');
+          if (el) {
+            forceDrawer();
+            observer.observe(el, { attributes: true, attributeFilter: ['data-menu-style'] });
+          }
         });
       })();
     </script>
